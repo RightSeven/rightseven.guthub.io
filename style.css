@@ -1,0 +1,55 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+h2 {
+  padding: 35px 10px;
+  font-style: bold;
+  color: 	#C2E0FF;
+}
+
+
+.container{
+  width: 100%;
+  height: 100px;
+  background: #000000;
+  position: static;
+  top:0;
+}
+img{
+  float: left;
+  padding: 20px 5px 15px 5px;
+  width: 60px;
+}
+nav{
+  float: right;
+  padding: 20px 5px 15px 5px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav li{
+  float: left;
+}
+nav li a {
+  display: block;
+}
+
+/* 滑鼠浮動特效 */
+nav li:hover{ 
+  background-color: #B4C7ED;
+  opacity: 0.5; }   
+nav a{
+  padding: 0 10px;
+}
+
+/////////////////

@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+  <title>FROZEN II</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<!--   <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Inconsolata"
+  /> -->
+<!--   <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"
+  ></script> -->
+  <style>
+    body,
+    html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+      background-color: #fafbfc;
+      scroll-behavior: smooth;
+    }
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url("https://cdn.glitch.com/f7298341-4d2c-435d-9824-4ae273d9b07c%2F2.jpg?v=1575350682704");
+      min-height: 75%;
+    }
+/*     .menu {
+      display: none;
+    }
+    .card {
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 96%;
+      height: 100%;
+      margin: 5px;
+    } */
+
+/*     .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      padding: 2px 16px;
+    }
+
+    .card-text {
+      font-family: "Times New Roman";
+      front-size: 20px;
+    } */
+  </style>
+
+  <style>
+    /* 小圖片縮放 */
+/*     .container img {
+      transition: all 0.5s ease-in-out;
+    }
+
+    .container:hover img {
+      transform: scale(1.15);
+    } */
+
+    /* 小標題翻轉*/
+    /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-box {
+      width: 100%;
+      height: 150px;
+      background-color: transparent;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-box-inner {
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-box:hover .flip-box-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-box-front,
+    .flip-box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    /* Style the front side */
+    .flip-box-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    /* Style the back side */
+    .flip-box-back {
+      background-color: dodgerblue;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    /* 按鈕改動*/
+/*     .btn {
+      background-color: #ddd;
+      border: none;
+      color: black;
+      padding: 10px 25px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+     */
+    /*圖片框*/
+    /* Slideshow container */
+/*     .slideshow-container {
+      max-width: 700px;
+      position: relative;
+      margin: auto;
+    }
+ */
+    /* Next & previous buttons */
+/*     .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    } */
+
+    /* Position the "next button" to the right */
+/*     .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+ */
+    /* On hover, add a black background color with a little bit see-through */
+/*     .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+ */
+    /* The dots/bullets/indicators */
+/*     .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+ */
+    /* Fading animation */
+/*     .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+ */
+    /* On smaller screens, decrease text size */
+/*     @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    } */
+  </style>
+  <head>
+<!--     <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+<!--     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    /> -->
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> -->
+  </head>
+
+  <body>
+    <!-- 最上方橫標題+link -->
+    <div class="w3-top">
+      <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s2">
+          <a href="#" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s2">
+          <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+        </div>
+        <div class="w3-col s2">
+          <a href="#characters" class="w3-button w3-block w3-black"
+            >CHARACTERS</a
+          >
+        </div>
+        <div class="w3-col s2">
+          <a href="#game" class="w3-button w3-block w3-black">GAME</a>
+        </div>
+        <div class="w3-col s2">
+          <a href="#message" class="w3-button w3-block w3-black">MESSAGE</a>
+        </div>
+        <div class="w3-col s2">
+          <a href="#news" class="w3-button w3-block w3-black">NEWS</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header上方大圖 -->
+    <header
+      class="bgimg w3-display-container w3-grayscale-min animated zoomIn slower"
+      id="home"
+    >
+      <div class="w3-display-bottommiddle w3-center ">
+        <span
+          class="w3-text-white animated fadeInDown delay-2s"
+          style="font-size:70px"
+          >𝔽ℝ𝕆ℤ𝔼ℕ 𝕝𝕝</span
+        >
+      </div>
+      <div class="w3-display-bottomright w3-padding-large">
+        <button class="w3-button w3-black" onclick="music()">
+          <i id="mbtn" class="fas fa-volume-mute"></i>
+        </button>
+        <audio
+          src="https://cdn.glitch.com/f7298341-4d2c-435d-9824-4ae273d9b07c%2Ffrozen.mp3?v=1575359551303"
+          id="music"
+          controls
+          loop
+          hidden
+        >
+          <h3>很抱歉! 您的瀏覽器不支援此音訊格式</h3>
+        </audio>
+      </div>
+    </header>
+
+    <!-- 背景底圖+字大小設定 whole page -->
+    <div class="w3-large" style="background-color:#c7bbbb">
+      <!--background-->
+      <!--  About Container  -->
+      <div class="w3-container" id="about">
+        <div class="w3-content " style="max-width:700px">
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <h5 class="w3-center w3-padding-64 ">
+                  <span class="w3-tag w3-wide ">ABOUT MOVIE</span>
+                </h5>
+              </div>
+              <div class="flip-box-back">
+                <h5 class="w3-center w3-padding-64 ">
+                  <span class="w3-tag w3-wide ">電影介紹</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="w3-row">
+            <div class="w3-col m5 l4 ">
+              <div class="container">
+                <img
+                  style="width:90%;max-width:1000px"
+                  class="w3-margin-top"
+                  src="https://cdn.glitch.com/f7298341-4d2c-435d-9824-4ae273d9b07c%2F%E4%B8%8B%E8%BC%89%20(3).jpg?v=1575351636797"
+                />
+              </div>
+            </div>
+
+            <div class="w3-col m7 l8">
+              <br /><strong style="font-size:xx-large">Frozen 2 </strong>
+              <p>
+                <i
+                  class="fas fa-star"
+                  style="color:#FFE153;text-shadow: 1px 1px gray"
+                ></i>
+                <i
+                  class="fas fa-star"
+                  style="color:#FFE153;text-shadow: 1px 1px gray"
+                ></i>
+                <i
+                  class="fas fa-star"
+                  style="color:#FFE153;text-shadow: 1px 1px gray"
+                ></i>
+                <i
+                  class="fas fa-star"
+                  style="color:#FFE153;text-shadow: 1px 1px gray"
+                ></i>
+                <i
+                  class="fas fa-star-half"
+                  style="color:#FFE153;text-shadow: 1px 1px gray"
+                ></i>
+                <b style="color:red;font-size: 25px;">8.6</b>
+              </p>
+              <br />
+              <p>
+                <strong>導演：</strong>Chris Buck、Jennifer Lee<br />
+                <strong>演員：</strong>Kristen Bell、Evan Rachel Wood、Josh
+                Gad<br />
+                <strong>類型：</strong>動畫、喜劇、冒險<br />
+                <strong>片長：</strong>1 時 43 分
+              </p>
+            </div>
+          </div>
+
+          <div class="w3-panel w3-leftbar w3-sand">
+            <p>
+              2013年轟動全球票房的迪士尼《冰雪奇緣》續集。
+              <br />安娜、艾莎一夥人將深入神秘魔法森林，發現到艾倫戴爾王國長久以來深藏的秘密，一個有著風火水土元素的魔法國度，以及艾莎魔法來源的真相。
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!--Photo in movie-->
+      <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2Foriginal.jpg?v=1575622967032" style="width:100%">
+      </div>
+        
+      <div class="mySlides fade">
+        <img src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2Ffrozen-2-elsa-staying-single-revealing-disney-thinks-we-dont-need-fairy-tales-00.jpg?v=1575622938417" style="width:100%">
+      </div>
+        
+      <div class="mySlides fade">
+        <img src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2Fforzen%20movie%20photo.jpg?v=1575705792420" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2Fforzen%20movie%20photo3.jpg?v=1575705986165" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span> 
+      </div>
+      
+      
+      <!-- Characters Container -->
+
+      <div class="w3-container" id="characters">
+        <div class="w3-content" style="max-width:700px">
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <h5 class="w3-center w3-padding-48">
+                  <span class="w3-tag w3-wide">CHARACTERS</span>
+                </h5>
+              </div>
+              <div class="flip-box-back">
+                <h5 class="w3-center w3-padding-48">
+                  <span class="w3-tag w3-wide">角色介紹</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="w3-row w3-center w3-card w3-padding">
+            <a
+              href="javascript:void(0)"
+              onclick="openMenu(event, 'main');"
+              id="myLink"
+            >
+              <div class="w3-col s6 tablink"><strong>主角</strong></div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'other');">
+              <div class="w3-col s6 tablink"><strong>配角</strong></div>
+            </a>
+          </div>
+
+          <div id="main" class="w3-container menu w3-padding-48 w3-card">
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://cdn.glitch.com/f7298341-4d2c-435d-9824-4ae273d9b07c%2Felsa.webp?v=1575444787228"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>ELSA</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  Elsa is the perfect mythic character – magical and larger than
+                  life. Grateful her kingdom now accepts her, she works hard to
+                  be a good queen. But deep down she can’t help but wonder why
+                  she was born with powers.
+                </p>
+              </div>
+            </div>
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://cdn.glitch.com/f7298341-4d2c-435d-9824-4ae273d9b07c%2Fanna.webp?v=1575445608372"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>ANNA</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  Anna is the perfect fairytale character; unflappable, she is
+                  the forever optimist. Anna is fine as long as she has her
+                  family, Arendelle is safe, and she never has to be alone
+                  again.
+                </p>
+              </div>
+            </div>
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://cdn.glitch.com/f7298341-4d2c-435d-9824-4ae273d9b07c%2FKristoff.webp?v=1575446100436"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>KRISTOFF</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  A rugged mountain man and ice harvester by trade, Kristoff was
+                  a bit of a loner with his reindeer pal, Sven, until he met
+                  Anna. As Arendelle’s official Ice Master and Deliverer,
+                  Kristoff has found love with Anna and his new family: Elsa,
+                  Olaf and Sven.
+                </p>
+              </div>
+            </div>
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://cdn.glitch.com/f7298341-4d2c-435d-9824-4ae273d9b07c%2Folaaf.webp?v=1575446840148"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>OLAF</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  Created from Elsa’s magical powers, Olaf is by far the
+                  friendliest snowman in Arendelle. He is innocent, outgoing and
+                  loves all things summer. Olaf may be a bit naive, but his
+                  sincerity and good-natured temperament make him a true friend
+                  to Anna and Elsa.
+                </p>
+              </div>
+            </div>
+
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://cdn.glitch.com/f7298341-4d2c-435d-9824-4ae273d9b07c%2Fsteve.webp?v=1575446850080"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>SVEN</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  A reindeer with the heart of a Labrador, Sven is Kristoff's
+                  loyal friend, sleigh-puller and conscience.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--  -->
+          <div id="other" class="w3-container menu w3-padding-48 w3-card">
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://lumiere-a.akamaihd.net/v1/images/character_frozen_snowgies_90c77a8a.jpeg?region=0,0,450,450&width=320"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>SNOWGIES</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  Snowgies are little snowmen Elsa unwittingly creates every
+                  time she sneezes—and she sneezes a lot.
+                </p>
+              </div>
+            </div>
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-16im6ko_28911153.jpeg?region=0,0,450,450&width=320"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>HANS</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  Hans is a handsome royal from a neighboring kingdom who comes
+                  to Arendelle for Elsa's coronation.
+                </p>
+              </div>
+            </div>
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-1lmf7be_651780d5.jpeg?region=0,0,450,450&width=320"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>DUKE of WESELTON</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  What the Duke of Weselton lacks in stature, he makes up for in
+                  arrogance and showboating.
+                </p>
+              </div>
+            </div>
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-2r9ayr_e4c2b692.jpeg?region=0,0,600,600&width=320"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>OAKEN</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  Oaken runs Wandering Oaken's Trading Post and Sauna.
+                </p>
+              </div>
+            </div>
+            <div class="w3-row" style="padding:5px 0px">
+              <div class="w3-col m4 l4">
+                <img
+                  style="width:80%;max-width:1000px;border-radius: 6px;"
+                  class="w3-margin-top"
+                  src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-1y778bt_9c31d7bc.jpeg?region=0,0,450,450&width=320"
+                /><br />
+              </div>
+              <div class="w3-col m8 l8">
+                <div style="padding:5px 0px 0px">
+                  <h5>MARSHMALLOW</h5>
+                </div>
+                <p class="w3-text-grey" style="font-size: 16px">
+                  Marshmallow is an enormous icy snowman born from Elsa's
+                  powers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Container -->
+      <div class="w3-container" id="game">
+        <div class="w3-content" style="max-width:700px">
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <h5 class="w3-center w3-padding-48">
+                  <span class="w3-tag w3-wide">THE GAME</span>
+                </h5>
+              </div>
+              <div class="flip-box-back">
+                <h5 class="w3-center w3-padding-48">
+                  <span class="w3-tag w3-wide">小遊戲</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <!----->
+          
+          <div class="w3-row">
+            <div class="w3-col m5 l4 ">
+              <div class="container">
+                <img
+                  style="width:90%;max-width:1000px"
+                  class="w3-margin-top"
+                  src="https://cdn0-production-images-kly.akamaized.net/RFTD89k3weVtlS4nVZPjMAbAkiI=/640x853/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2972238/original/050931400_1574217056-Frozen_2_Poster.jpg"
+                />
+              </div>
+            </div>
+
+            <div class="w3-col m7 l8">
+              <div class="welcome-content">
+                <div class="organix-header text-left">
+                  <h2><b>Frozen II GAME</b></h2>
+                  <div class="heading-border"></div>
+                  <p>
+                    Frozen of pac-man
+                  </p>
+                </div>
+
+                <p>
+                  遊戲的目的就是控制遊戲的主角<b>Elsa</b>吃掉藏在迷宮內所有<br/>
+                  的豆子，並且不能被<b>雪怪</b>抓到。迷宮的四個角落有大的閃<br/>
+                  爍點稱為大力丸，提供<b>Elsa</b>一小段時間可以反過來吃掉<br/>
+                  <b>雪怪</b>。<b>雪怪</b>在這段時間內會變成<b>小雪花</b>，並往反方向逃逸<br/>
+                  ，而且比平常的移動速度慢。
+                </p>
+
+                <a class="btn btn-info" href="https://1081-final-snow.glitch.me/index_game.html">PLAY NOW</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- message Container -->
+      <div class="w3-container" id="message" style="padding-bottom:32px;">
+        <div class="w3-content" style="max-width:700px">
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <h5 class="w3-center w3-padding-48">
+                  <span class="w3-tag w3-wide">MESSAGE BOARD</span>
+                </h5>
+              </div>
+              <div class="flip-box-back">
+                <h5 class="w3-center w3-padding-48">
+                  <span class="w3-tag w3-wide">留言板</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        <iframe src="https://www6.cbox.ws/box/?boxid=834629&boxtag=x2UduW"
+                width="100%" 
+                height="400" 
+                allowtransparency="yes" 
+                allow="autoplay" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                scrolling="auto">
+          </iframe>	
+        </div>
+      </div>
+
+      <!-- News Container -->
+      <div class="w3-container" id="news">
+        <div class="w3-content" style="max-width:700px">
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <h5 class="w3-center w3-padding-64 ">
+                  <span class="w3-tag w3-wide ">NEWS</span>
+                </h5>
+              </div>
+              <div class="flip-box-back">
+                <h5 class="w3-center w3-padding-64 ">
+                  <span class="w3-tag w3-wide ">相關新聞</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+          
+<!--           <strong style="font-size: large">推薦新聞</strong> -->
+          <div class="w3-row">
+            <div class="w3-col m4 l4">
+              <a
+                href="https://www.4gamers.com.tw/news/detail/41257/frozen-2-review"
+                style="text-decoration:none"
+                target="_self"
+              >
+                <div class="card text-dark" style="background-color: white">
+                  
+                  <img
+                    src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2Foriginal.jpg?v=1575622967032"
+                    alt="《冰雪奇緣2》是探討土地轉型正義的偽漫威動畫"
+                    class="card-img-top card-img"
+                    width="100%"
+                  />
+                  <div
+                    class="card-text d-flex flex-column justify-content-between flex-grow-1"
+                    style="font-size: medium;padding: 5px"
+                  >
+                    《冰雪奇緣2》是探討土地轉型正義的偽漫威動畫<br /><br /><br />
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="w3-col m4 l4">
+              <a
+                href="https://www.kkbox.com/tw/tc/column/showbiz-0-8718-1.html"
+                style="text-decoration:none"
+                target="_self"
+              >
+                <div class="card text-dark" style="background-color: white">
+                  <img
+                    src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2F800x420.jpg?v=1575622935244"
+                    alt="「冰雪奇緣2」主題曲美聲大車拼！美台日韓你最喜歡哪個版本？"
+                    class="card-img-top card-img"
+                    width="100%"
+                  />
+                  <div
+                    class="card-text d-flex flex-column justify-content-between flex-grow-1"
+                    style="font-size: medium;padding: 5px"
+                  >
+                    「冰雪奇緣2」主題曲美聲大車拼！美台日韓你最喜歡哪個版本？<br /><br />
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="w3-col m4 l4">
+              <a
+                href="https://popbee.com/features/frozen-2-elsa-staying-single-revealing-disney-thinks-we-dont-need-fairy-tales/"
+                style="text-decoration:none"
+                target="_self"
+              >
+                <div class="card text-dark" style="background-color: white">
+                  <img
+                    src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2Ffrozen-2-elsa-staying-single-revealing-disney-thinks-we-dont-need-fairy-tales-00.jpg?v=1575622938417"
+                    alt="《Frozen2》中的Elsa依舊單身，是迪士尼正在告訴我們女生根本不需要童話!"
+                    class="card-img-top card-img"
+                    width="100%"
+                  />
+                  <div
+                    class="card-text d-flex flex-column justify-content-between flex-grow-1"
+                    style="font-size: medium;padding: 5px"
+                  >
+                    《Frozen2》中的Elsa依舊單身，是迪士尼正在告訴我們女生根本不需要童話!<br /><br />
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="w3-row">
+            <div class="w3-col m4 l4">
+              <a
+                href="https://news.agentm.tw/84893/%e5%86%b0%e9%9b%aa%e5%a5%87%e7%b7%a3-%e7%a5%9e%e6%9b%b2-let-it-go-%e5%a5%b3%e7%8e%8b-%e8%89%be%e8%8e%8e-%e5%8f%8d%e6%b4%be/"
+                style="text-decoration:none"
+                target="_self"
+              >
+                <div class="card text-dark" style="background-color: white">
+                  <img
+                    src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2F%E5%86%B0%E9%9B%AA%E5%A5%87%E7%B7%A3%EF%BC%8D%E9%A6%96%E5%9C%96-750x422.png?v=1575623186028"
+                    alt="《冰雪奇緣》傳唱神曲〈Let It Go〉背後故事： 女王艾莎原本設定為反派角色？"
+                    class="card-img-top card-img"
+                    width="100%"
+                  />
+                  <div
+                    class="card-text d-flex flex-column justify-content-between flex-grow-1"
+                    style="font-size: medium;padding: 5px"
+                  >
+                    《冰雪奇緣》傳唱神曲〈Let It Go〉背後故事：
+                    女王艾莎原本設定為反派角色？<br /><br />
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="w3-col m4 l4">
+              <a
+                href="https://news.agentm.tw/85248/%e5%86%b0%e9%9b%aa%e5%a5%87%e7%b7%a32-%e7%89%87%e5%b0%be%e5%bd%a9%e8%9b%8b-%e9%a6%96%e9%9b%86-%e5%91%bc%e6%87%89-%e7%a5%9e%e7%a7%98%e5%98%89%e8%b3%93/"
+                style="text-decoration:none"
+                target="_self"
+              >
+                <div class="card text-dark" style="background-color: white">
+                  <img
+                    src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2Fcover-127-750x422.jpg?v=1575623181600"
+                    alt="看完別急著走！《冰雪奇緣2》片尾片段與電影內容相呼應，甚至出現萌萌的神秘嘉賓"
+                    class="card-img-top card-img"
+                    width="100%"
+                  />
+                  <div
+                    class="card-text d-flex flex-column justify-content-between flex-grow-1"
+                    style="font-size: medium;padding: 5px"
+                  >
+                    看完別急著走！《冰雪奇緣2》片尾片段與電影內容相呼應，甚至出現萌萌的神秘嘉賓<br /><br />
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="w3-col m4 l4">
+              <a
+                href="https://news.agentm.tw/85770/%E5%86%B0%E9%9B%AA%E5%A5%87%E7%B7%A32-22%E5%80%8B-%E5%8A%87%E6%83%85-%E7%B4%B0%E7%AF%80-%E5%BD%A9%E8%9B%8B/"
+                style="text-decoration:none"
+                target="_self"
+              >
+                <div class="card text-dark" style="background-color: white">
+                  <img
+                    src="https://cdn.glitch.com/3c2b5596-962f-40db-8b23-dbed4d9f72a8%2F%E5%BD%A9%E8%9B%8B-750x422.jpg?v=1575623188265"
+                    alt="《冰雪奇緣2》22個你可能沒注意到的劇情細節安排與彩蛋整理!"
+                    class="card-img-top card-img"
+                    width="100%"
+                  />
+                  <div
+                    class="card-text d-flex flex-column justify-content-between flex-grow-1"
+                    style="font-size: medium;padding: 5px"
+                  >
+                    《冰雪奇緣2》22個你可能沒注意到的劇情細節安排與彩蛋整理!<br /><br />
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+      </div>
+
+      <!-- End page content -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+      <p>Powered by team2</p>
+    </footer>
+
+    <script>
+      // Tabbed Menu
+      function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(
+            " w3-dark-grey",
+            ""
+          );
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+      }
+      document.getElementById("myLink").click();
+
+      // 背景音樂
+      var count = 0;
+      var mid = document.getElementById("music");
+      mid.currentTime = 72.5;
+      function music() {
+        count = count + 1;
+        mid.controls = true;
+        if (count % 2 != 0) {
+          mid.play();
+          $("#mbtn").removeClass("fas fa-volume-mute");
+          $("#mbtn").addClass("fas fa-volume-down");
+        } else {
+          mid.pause();
+          $("#mbtn").removeClass("fas fa-volume-down");
+          $("#mbtn").addClass("fas fa-volume-mute");
+        }
+      }
+    </script>
+  </body>
+</html>
